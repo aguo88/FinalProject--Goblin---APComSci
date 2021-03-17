@@ -35,8 +35,8 @@ void setDrive() {
   int rightSign = getSign(rightPower);
 
   //Check if exceeding -1 or 1
-  leftPower = std::abs(leftPower) > 1.0 ? leftPower * leftSign : leftPower;
-  rightPower = std::abs(rightPower) > 1.0 ? rightPower * rightSign : rightPower;
+  leftPower = std::abs(leftPower) > 1.0 ? 1.0 * leftSign : leftPower;
+  rightPower = std::abs(rightPower) > 1.0 ? 1.0 * rightSign : rightPower;
 
   setDriveMotors(leftPower, rightPower);
 }
