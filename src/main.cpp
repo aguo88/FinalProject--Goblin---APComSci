@@ -1,6 +1,10 @@
 //hello
 #include "main.h"
 #include "subsytemheaders/drivetrain.hpp"
+#include "subsytemheaders/constants.hpp"
+#include "subsytemheaders/PID.hpp"
+#include "subsytemheaders/globals.hpp"
+#include "subsytemheaders/arm.hpp"
 
 /**
  * A callback function for LLEMU's center button.
@@ -77,10 +81,14 @@ void autonomous() {}
  */
 void opcontrol() {
 	while (true) {
-		//delay 10ms for motors to update to correct voltage
-		pros::delay(10);
-
 		//control drive
 		setDrive();
+    
+    //control arm
+    armControl();
+    
+    
+    //delay 10ms for motors to update to correct voltage
+    pros::delay(ROBOT_DELAY);
 	}
 }
