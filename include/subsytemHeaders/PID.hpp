@@ -19,5 +19,6 @@ class PID
   void setError(double error);
   double getTarget();
   void setTarget(double target);
-  double PIDcount(int target);
+  double PIDcount();
+  double PIDdegree();
 };
