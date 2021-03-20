@@ -6,6 +6,7 @@ extern pros::Motor rightDriveMotor;
 extern pros::Motor armMotor;
 extern pros::Motor clawMotor;
 
+
 //Vision Sensor
 extern pros::Vision visionCam;
 
