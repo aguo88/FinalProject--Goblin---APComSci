@@ -11,3 +11,5 @@ pros::Vision visionCam(CAM_PORT);
 
 //(Master for 1, partner for 2)
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
+
+pros::Imu gyro(GYRO_PORT);

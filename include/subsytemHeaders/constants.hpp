@@ -8,6 +8,9 @@ extern const int ARM_PORT = 8;
 //VISION CAMERA
 extern const int CAM_PORT = 2;
 
+//GYRO SENSOR
+extern const int GYRO_PORT = 3;
+
 //MOTOR SCALE
 extern const int MOTOR_SCALE = 127;
 

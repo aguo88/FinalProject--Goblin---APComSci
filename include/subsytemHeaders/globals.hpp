@@ -12,3 +12,5 @@ extern pros::Vision visionCam;
 
 //Controller
 extern pros::Controller controller;
+
+extern pros::Imu gyro;
