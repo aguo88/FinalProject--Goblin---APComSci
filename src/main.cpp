@@ -83,11 +83,14 @@ void opcontrol() {
 	while (true) {
 		//control drive
 		setDrive();
-    
+
     //control arm
     armControl();
-    
-    
+
+		//control claw
+		clawControl();
+
+
     //delay 10ms for motors to update to correct voltage
     pros::delay(ROBOT_DELAY);
 	}

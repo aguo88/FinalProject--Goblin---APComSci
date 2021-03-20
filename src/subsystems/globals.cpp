@@ -5,7 +5,7 @@
 pros::Motor leftDriveMotor(LEFT_DRIVE_PORT, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor rightDriveMotor(RIGHT_DRIVE_PORT, pros::E_MOTOR_GEARSET_36, true, pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor armMotor(ARM_PORT, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_DEGREES);
-pros::Motor clawMotor(CLAW_PORT, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_OPEN);
+pros::Motor clawMotor(CLAW_PORT, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_DEGREES);
 
 pros::Vision visionCam(CAM_PORT);
 
