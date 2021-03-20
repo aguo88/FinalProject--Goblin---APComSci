@@ -5,6 +5,8 @@ extern const int LEFT_DRIVE_PORT = 0;
 extern const int RIGHT_DRIVE_PORT = 1;
 extern const int ARM_PORT = 8;
 
+//VISION CAMERA
+extern const int CAM_PORT = 2;
 
 //MOTOR SCALE
 extern const int MOTOR_SCALE = 127;
