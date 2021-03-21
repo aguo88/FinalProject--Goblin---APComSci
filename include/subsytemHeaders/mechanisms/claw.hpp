@@ -1,4 +1,4 @@
 #include "main.h"
 
 void clawControl();
-void autControl(double power);
+void control(double power);

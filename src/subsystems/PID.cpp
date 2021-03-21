@@ -14,7 +14,7 @@ PID::PID(double p, double i, double d, double target, pros::Motor otherMotor)
 }
 
 double PID::PIDcount() {
-  this->setError(this->target - this->motor().get_position());
+  this->setError(this->target - this->motor.get_position());
   this->sum += this->getError() * ROBOT_DELAY;
   double derivative = (this->getError() - this->last) / ROBOT_DELAY;
   double power = this->p * getError() + i*this->sum + d*derivative;
@@ -23,7 +23,7 @@ double PID::PIDcount() {
 }
 
 double PID::PIDdegree() {
-  this->setError(this->target - this->motor().get_position());//get gyro val instead
+  this->setError(this->target - this->motor.get_position());//get gyro val instead
   this->sum += this->getError() * ROBOT_DELAY;
   double derivative = (this->getError() - this->last) / ROBOT_DELAY;
   double power = this->p * getError() + i*this->sum + d*derivative;

@@ -4,8 +4,8 @@
 
 PID clawPID(0, 0, 0, 0, clawMotor);
 
-void autoControl(double power) {
-  clawMotor.move(clawPID.PIDdegree());
+void control(double power) {
+  clawMotor.move(power);
 }
 
 void clawControl() {
@@ -15,4 +15,5 @@ void clawControl() {
   else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1) == 1){
     clawPID.setTarget(0);
   }
+  control(clawPID.PIDdegree());
 }
