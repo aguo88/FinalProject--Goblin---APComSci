@@ -1,10 +1,11 @@
 //hello
 #include "main.h"
-#include "subsytemheaders/drivetrain.hpp"
-#include "subsytemheaders/constants.hpp"
-#include "subsytemheaders/PID.hpp"
-#include "subsytemheaders/globals.hpp"
-#include "subsytemheaders/arm.hpp"
+#include "subsytemHeaders/constants.hpp"
+#include "subsytemHeaders/PID.hpp"
+#include "subsytemHeaders/globals.hpp"
+#include "subsytemHeaders/mechanisms/drivetrain.hpp"
+#include "subsytemHeaders/mechanisms/arm.hpp"
+#include "subsytemHeaders/mechanisms/claw.hpp"
 
 /**
  * A callback function for LLEMU's center button.

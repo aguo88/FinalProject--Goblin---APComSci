@@ -1,5 +1,5 @@
 #include "main.h"
-#include "subsytemheaders/globals.hpp"
+#include "subsytemHeaders/globals.hpp"
 #include "subsytemHeaders/PID.hpp"
 
 static int maxArmDegMovement = 1;

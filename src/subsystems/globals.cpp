@@ -1,5 +1,5 @@
 #include "main.h"
-#include "subsytemheaders/constants.hpp"
+#include "subsytemHeaders/constants.hpp"
 
 //(port, gearset, reversed, encoder units)
 pros::Motor leftDriveMotor(LEFT_DRIVE_PORT, pros::E_MOTOR_GEARSET_36, false, pros::E_MOTOR_ENCODER_COUNTS);

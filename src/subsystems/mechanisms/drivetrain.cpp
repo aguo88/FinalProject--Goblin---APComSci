@@ -1,7 +1,7 @@
 #include "main.h"
-#include "subsytemheaders/globals.hpp"
-#include "subsytemheaders/constants.hpp"
-#include "subsytemheaders/math.hpp"
+#include "subsytemHeaders/globals.hpp"
+#include "subsytemHeaders/constants.hpp"
+#include "subsytemHeaders/math.hpp"
 
 //DRIVER CONTROL FUNCTIONS
 void setDriveMotors(double leftVoltage, double rightVoltage) {

@@ -1,9 +1,18 @@
 #include "main.h"
-#include "subsytemheaders/globals.hpp"
+#include "subsytemHeaders/globals.hpp"
+#include "subsytemHeaders/PID.hpp"
 
-void open_close (double power) {
-  
+PID clawPID(0, 0, 0, 0, clawMotor);
+
+void autoControl(double power) {
+  clawMotor.move(clawPID.PIDdegree());
 }
+
 void clawControl() {
-  if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_X) == 1)
+  if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1) == 1) {
+    clawPID.setTarget(120);
+  }
+  else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1) == 1){
+    clawPID.setTarget(0);
+  }
 }
