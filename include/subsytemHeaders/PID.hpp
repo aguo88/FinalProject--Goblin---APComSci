@@ -7,7 +7,7 @@ class PID
 
   public:
   double sum, last;
-  pros::Motor motor();
+  pros::Motor motor;
   PID(double kP, double kI, double kD, double setPoint, pros::Motor motor);
   double getP();
   void setP(double p);

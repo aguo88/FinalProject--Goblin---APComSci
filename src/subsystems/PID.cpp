@@ -10,7 +10,7 @@ PID::PID(double p, double i, double d, double target, pros::Motor otherMotor)
     this->d = d;
     this->target = target;
     sum = 0.0, last = 0.0;
-    pros::Motor* motor = &otherMotor;
+    pros::Motor* motor = new pros::Motor(otherMotor.get_port(), otherMotor.get_gearing(), false, otherMotor.get_encoder_units());
 }
 
 double PID::PIDcount() {
