@@ -15,16 +15,16 @@ void setDrive() {
   get joystick values from controller
   set up as kaj drive controls
   */
-  double leftJoystickVal = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  double rightJoystickVal = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+  double leftJoystickVal = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y)/127.0;
+  double rightJoystickVal = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)/127.0;
 
   //cube them?
   leftJoystickVal = pow(leftJoystickVal, 3);
   rightJoystickVal = pow(rightJoystickVal, 3);
 
   //accounts for deadzones
-  leftJoystickVal = std::abs(leftJoystickVal) < 0.1? 0.0 : leftJoystickVal;
-  rightJoystickVal = std::abs(rightJoystickVal) < 0.1? 0.0 : rightJoystickVal;
+  // leftJoystickVal = std::abs(leftJoystickVal) < 0.1? 0.0 : leftJoystickVal;
+  // rightJoystickVal = std::abs(rightJoystickVal) < 0.1? 0.0 : rightJoystickVal;
 
   //calculates individual motor voltage
   double leftPower = leftJoystickVal + rightJoystickVal;

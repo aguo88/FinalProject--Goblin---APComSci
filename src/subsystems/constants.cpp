@@ -1,19 +1,22 @@
 #include "main.h"
 
 //PORTS
-int LEFT_DRIVE_PORT = 0;
-int RIGHT_DRIVE_PORT = 1;
+int LEFT_DRIVE_PORT = 3;
+int RIGHT_DRIVE_PORT = 12;
 int ARM_PORT = 8;
-int CLAW_PORT = 9;
+int CLAW_PORT = 1;
 
 //VISION CAMERA
-int CAM_PORT = 2;
+int CAM_PORT = 1;
 
 //GYRO SENSOR
-int GYRO_PORT = 3;
+int GYRO_PORT = 1;
+
+//Distance Sensor
+int DISTANCE_PORT = 1;
 
 //MOTOR SCALE
 int MOTOR_SCALE = 127;
 
 //Loop Delay
-double ROBOT_DELAY = 0.01;//10ms
+double ROBOT_DELAY = 2;//10ms

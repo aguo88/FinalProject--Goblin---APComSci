@@ -12,6 +12,9 @@ extern const int CAM_PORT;
 //GYRO SENSOR
 extern const int GYRO_PORT;
 
+//DISTANCE SENSOR
+extern const int DISTANCE_PORT;
+
 //MOTOR SCALE
 extern const int MOTOR_SCALE;
 
