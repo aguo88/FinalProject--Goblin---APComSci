@@ -9,10 +9,9 @@ int currentTargetX;
 int currentTargetY;
 
 void setVision();
+double getAngle();
 void findObjects();
 double getArea();
 double getDistance();
 void clearVision();
 void checkExposure(int exposure);
-
-
