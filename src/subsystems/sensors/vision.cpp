@@ -10,10 +10,7 @@ const int GREEN_ID = 3;
 const int MIN_SIZE = 5000;
 //maximum area of acceptable object
 const int MAX_SIZE = 6000;
-
-int CURRENT_ID = 0;
-
-pros::vision_object_s_t currentObj = visionCam.get_by_sig(0, CURRENT_ID);
+pros::vision_object_s_t currentObj;
 
 void checkExposure(int exposure) {
   if(visionCam.get_exposure() > exposure) {
@@ -22,7 +19,7 @@ void checkExposure(int exposure) {
 }
 
 void findObject() {
-  currentObj = visionCam.get_by_sig(0, CURRENT_ID);
+  currentObj = visionCam.get_by_sig(0, 1);
 }
 
 double getArea() {

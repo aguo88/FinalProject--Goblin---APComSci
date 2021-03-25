@@ -14,3 +14,5 @@ extern pros::Vision visionCam;
 extern pros::Controller controller;
 
 extern pros::Imu gyro;
+
+extern pros::Distance distanceSensor;

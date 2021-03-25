@@ -6,6 +6,7 @@
 #include "subsytemHeaders/mechanisms/drivetrain.hpp"
 #include "subsytemHeaders/mechanisms/arm.hpp"
 #include "subsytemHeaders/mechanisms/claw.hpp"
+#include "subsytemHeaders/sensors/vision.hpp"
 
 /**
  * A callback function for LLEMU's center button.
@@ -26,7 +27,8 @@ void on_center_button() {
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
- * All other competition modes are blocked by initialize; it is recommended
+ * All other competition m
+ odes are blocked by initialize; it is recommended
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
@@ -81,17 +83,23 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
+	pros::lcd::set_text(1, "Hello Wyeth!");
 	while (true) {
-		//control drive
-		setDrive();
+		// //control drive
+		// setDrive();
+		//
+    // //control arm
+    // armControl();
+		//
+		// //control claw
+		// clawControl();
 
-    //control arm
-    armControl();
+		// std::cout << "Gyro Value: " << gyro.get_heading() << std::endl;
 
-		//control claw
-		clawControl();
+		// std::cout << "Distance Value(mm): " << distanceSensor.get() << std::endl;
 
-
+		setVision();
+		std::cout << "Vision Area: " << getArea() << std::endl;
     //delay 10ms for motors to update to correct voltage
     pros::delay(ROBOT_DELAY);
 	}
