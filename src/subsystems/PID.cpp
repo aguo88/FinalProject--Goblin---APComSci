@@ -2,7 +2,7 @@
 #include "subsytemHeaders/PID.hpp"
 #include "subsytemHeaders/constants.hpp"
 
-PID::PID(double p, double i, double d, double target, pros::Motor motor)
+PID::PID(double p, double i, double d, double target, pros::Motor otherMotor)
 {
     //p, i, d are tuning values
     this->p = p;
@@ -10,7 +10,7 @@ PID::PID(double p, double i, double d, double target, pros::Motor motor)
     this->d = d;
     this->target = target;
     sum = 0.0, last = 0.0;
-    this->motor(motor.get_port(), motor.get_gearing(), false, motor.get_encoder_units());
+    this->motor(otherMotor.get_port());
 }
 
 double PID::PIDcount() {

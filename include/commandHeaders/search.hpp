@@ -5,7 +5,7 @@ class Search {
 
 
   public:
-  void searchGameObject();
-  void searchGoal();
+  static void searchGameObject();
+  static void searchGoal();
 
 };

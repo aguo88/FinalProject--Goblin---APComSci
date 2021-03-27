@@ -83,23 +83,23 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	pros::lcd::set_text(1, "Hello Wyeth!");
+	// pros::lcd::set_text(1, "Hello Wyeth!");
 	while (true) {
-		// //control drive
-		// setDrive();
-		//
-    // //control arm
+		//control drive
+		setDrive();
+
+    //control arm
     // armControl();
-		//
-		// //control claw
-		// clawControl();
+
+		//control claw
+		clawControl();
 
 		// std::cout << "Gyro Value: " << gyro.get_heading() << std::endl;
 
 		// std::cout << "Distance Value(mm): " << distanceSensor.get() << std::endl;
 
-		setVision();
-		std::cout << "Vision Area: " << getArea() << std::endl;
+		// setVision();
+		std::cout << "Vision Angle: " << getXCord() << std::endl;
     //delay 10ms for motors to update to correct voltage
     pros::delay(ROBOT_DELAY);
 	}
