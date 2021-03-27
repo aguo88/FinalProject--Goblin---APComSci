@@ -28,8 +28,16 @@ double getArea() {
 
 double getAngle() {
   //test both in degrees
-  return currentObj.angle / 10.0;
-  // return currentObj.x_middle_coord
+  // return currentObj.x_;
+  return currentObj.y_middle_coord;
+}
+
+int getXCord() {
+  return currentObj.x_middle_coord;
+}
+
+int getYCord() {
+  return currentObj.y_middle_coord;
 }
 
 int checkDistance() {
