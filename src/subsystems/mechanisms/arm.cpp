@@ -4,7 +4,7 @@
 
 static int maxArmDegMovement = 1;
 
-PID* armPID = new PID(10, 0, 0, 0, armMotor);
+PID* armPID = new PID(10, 0, 0, 0, 0);
 
 void autoControl(double power) {
   armMotor.move(power);
@@ -14,8 +14,13 @@ void setArmDeg(int degrees) {
   armPID->setTarget(degrees);
 }
 
+void updateArmPID() {
+  armPID->setCounts(armMotor.get_position());
+}
+
 //Always under PID loop
 void armControl() {
+  updateArmPID();
   // pros::lcd::set_text(1, motor_get_position(3));
   std::cout << "Motor Position: " << armMotor.get_position() << std::endl;
   //Manual & Preset Control

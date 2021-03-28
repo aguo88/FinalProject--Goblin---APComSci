@@ -3,12 +3,12 @@
 class PID
 {
   private:
-  double p, i, d, error, target;
+  double p, i, d, error, target, counts;
 
   public:
   double sum, last;
-  pros::Motor motor;
-  PID(double kP, double kI, double kD, double setPoint, pros::Motor motor);
+  pros::Motor motor();
+  PID(double kP, double kI, double kD, double setPoint, double counts);
   double getP();
   void setP(double p);
   double getI();
@@ -19,6 +19,8 @@ class PID
   void setError(double error);
   double getTarget();
   void setTarget(double target);
+  double getCounts();
+  void setCounts(double counts);
   double PIDcount();
   double PIDdegree();
 };
