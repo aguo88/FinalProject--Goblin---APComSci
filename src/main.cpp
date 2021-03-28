@@ -7,6 +7,7 @@
 #include "subsytemHeaders/mechanisms/arm.hpp"
 #include "subsytemHeaders/mechanisms/claw.hpp"
 #include "subsytemHeaders/sensors/vision.hpp"
+#include "commandHeaders/autoTask.hpp"
 
 /**
  * A callback function for LLEMU's center button.
@@ -92,14 +93,17 @@ void opcontrol() {
     // armControl();
 
 		//control claw
-		clawControl();
+		// clawControl();
 
 		// std::cout << "Gyro Value: " << gyro.get_heading() << std::endl;
 
 		// std::cout << "Distance Value(mm): " << distanceSensor.get() << std::endl;
 
-		// setVision();
-		std::cout << "Vision Angle: " << getXCord() << std::endl;
+		setVision();
+
+		manageAuto();
+		// std::cout << "Vision Angle: " << getXCord() << std::endl;
+
     //delay 10ms for motors to update to correct voltage
     pros::delay(ROBOT_DELAY);
 	}

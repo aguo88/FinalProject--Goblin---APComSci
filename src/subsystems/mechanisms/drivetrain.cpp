@@ -6,6 +6,7 @@
 //DRIVER CONTROL FUNCTIONS
 void setDriveMotors(double leftVoltage, double rightVoltage) {
   //motorSet?
+  // std::cout << "power: " << leftVoltage <<std::endl;
   leftDriveMotor.move(leftVoltage * MOTOR_SCALE);
   rightDriveMotor.move(rightVoltage * MOTOR_SCALE);
 }
@@ -39,4 +40,5 @@ void setDrive() {
   rightPower = std::abs(rightPower) > 1.0 ? 1.0 * rightSign : rightPower;
 
   setDriveMotors(leftPower, rightPower);
+  std::cout << "L: " << leftPower << " R: " << rightPower << std::endl;
 }
