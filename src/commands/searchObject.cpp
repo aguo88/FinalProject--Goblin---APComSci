@@ -1,5 +1,5 @@
 #include "main.h"
-#include "commandHeaders/searchObject.hpp"
+#include "commandHeaders/SearchObject.hpp"
 #include "subsytemHeaders/globals.hpp"
 #include "subsytemHeaders/constants.hpp"
 #include "subsytemHeaders/mechanisms/drivetrain.hpp"
