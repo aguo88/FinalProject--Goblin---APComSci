@@ -2,6 +2,7 @@
 
 
 void setVision();
+double getAngle();
 void findObjects();
 double getArea();
 double getAngle();
