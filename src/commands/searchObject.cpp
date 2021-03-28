@@ -4,17 +4,12 @@
 #include "subsytemHeaders/constants.hpp"
 #include "subsytemHeaders/mechanisms/drivetrain.hpp"
 #include "subsytemHeaders/sensors/vision.hpp"
-
-SearchObject::SearchObject(double motorPower){
-  this->motorPower = motorPower;
-}
-
-void SearchObject::searchGameObject() {
-  setDriveMotors(motorPower, motorPower * -1);
-}
+#include "commandHeaders/autoDrive.hpp"
+#include "commandHeaders/search.hpp"
 
 void SearchObject::foundGameObject() {
   double degrees = getAngle();
+  searchGameObject();
   if (degrees < 170 && degrees > 150) {
     gameObjectFound = true;
   }
@@ -22,6 +17,9 @@ void SearchObject::foundGameObject() {
   //when drivetrain angle matches degrees, set foundGameObject to true
   if (gameObjectFound == true) {
     setDriveMotors(0, 0);
+    AutoDrive::autodrive();
+
   }
   //will then call autoDrive method
+
 }

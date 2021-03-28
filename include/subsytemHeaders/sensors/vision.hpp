@@ -14,5 +14,6 @@ double getAngle();
 double getDistance();
 int getXCord();
 int getYCord();
+int checkDistance();
 void clearVision();
 void checkExposure(int exposure);
