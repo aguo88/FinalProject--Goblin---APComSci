@@ -5,3 +5,4 @@ void openClaw();
 void closeClaw();
 void clawControl();
 void control(double power);
+void updatePID();

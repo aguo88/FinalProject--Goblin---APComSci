@@ -2,7 +2,7 @@
 #include "subsytemHeaders/globals.hpp"
 #include "subsytemHeaders/PID.hpp"
 
-PID* clawPID = new PID(2, 0, 0, 0, clawMotor);
+PID* clawPID = new PID(2, 0, 0, 0, 0);
 bool autoClaw = true;
 
 void control(double power) {
@@ -11,15 +11,20 @@ void control(double power) {
 
 void openClaw() {
   clawPID->setTarget(-100);
-  control(clawPID->PIDdegree());
+  control(clawPID->PIDcount());
 }
 
 void closeClaw() {
   clawPID->setTarget(0);
-  control(clawPID->PIDdegree());
+  control(clawPID->PIDcount());
+}
+
+void updatePID() {
+  clawPID->setCounts(clawMotor.get_position());
 }
 
 void clawControl() {
+  updatePID();
   if(!autoClaw) {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1) == 1) {
       openClaw();
