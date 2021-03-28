@@ -3,7 +3,8 @@
 #include "subsytemHeaders/PID.hpp"
 
 PID* clawPID = new PID(2, 0, 0, 0, 0);
-bool autoClaw = true;
+bool autoClaw = false;
+bool aquiredObject = false;
 
 void control(double power) {
   clawMotor.move(power);
@@ -21,6 +22,14 @@ void closeClaw() {
 
 void updatePID() {
   clawPID->setCounts(clawMotor.get_position());
+}
+
+void checkClaw() {
+  if(distanceSensor.get() < 50) {
+    aquiredObject = true;
+  } else {
+    aquiredObject = false;
+  }
 }
 
 void clawControl() {
