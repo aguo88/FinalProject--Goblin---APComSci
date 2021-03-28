@@ -1,13 +1,6 @@
 #include "main.h"
 
-class SearchObject {
-  private:
-  double motorPower;
-
-  public:
-  void searchGameObject();
-  void foundGameObject();
-  bool gameObjectFound;
-  SearchObject(double power);
-
-};
+bool objectFound;
+void searchGameObject();
+void foundGameObject();
+void SearchObject(double power);

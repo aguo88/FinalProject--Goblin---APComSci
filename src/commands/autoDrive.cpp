@@ -2,9 +2,9 @@
 #include "commandHeaders/autoDrive.hpp"
 #include "subsytemHeaders/mechanisms/drivetrain.hpp"
 #include "subsytemHeaders/sensors/vision.hpp"
-#include "commandHeaders/SearchObject.hpp"
+#include "commandHeaders/searchObject.hpp"
 
-void AutoDrive::autoDrive() {
+void autoDrive() {
   int distance = checkDistance();
   double degrees = getAngle();
   if (distance == 1) { // test value
