@@ -37,10 +37,9 @@ void manageAuto() {
       setArmDeg(0);
       searchGameObject();
     } else {
-      setArmDeg(100);
+      setArmDeg(250);
     }
   } else {
     autoClaw = false;
-    setArmDeg(0);
   }
 }
