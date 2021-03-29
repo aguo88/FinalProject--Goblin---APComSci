@@ -55,6 +55,6 @@ int checkDistance() {
 }
 
 void setVision() {
-  checkExposure(50);
+  // checkExposure(50);
   findObject();
 }

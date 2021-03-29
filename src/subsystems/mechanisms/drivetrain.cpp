@@ -40,5 +40,5 @@ void setDrive() {
   rightPower = std::abs(rightPower) > 1.0 ? 1.0 * rightSign : rightPower;
 
   setDriveMotors(leftPower, rightPower);
-  std::cout << "L: " << leftPower << " R: " << rightPower << std::endl;
+  // std::cout << "L: " << leftPower << " R: " << rightPower << std::endl;
 }
