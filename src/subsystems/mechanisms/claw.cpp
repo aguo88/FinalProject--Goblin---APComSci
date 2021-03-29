@@ -1,10 +1,11 @@
 #include "main.h"
 #include "subsytemHeaders/globals.hpp"
 #include "subsytemHeaders/PID.hpp"
+#include "subsytemHeaders/mechanisms/claw.hpp"
 
-PID* clawPID = new PID(2, 0, 0, 0, 0);
-bool autoClaw = false;
-bool aquiredObject = false;
+PID* clawPID = new PID(10, 0, 0, 0, 0);
+bool autoClaw;
+bool aquiredObject;
 
 void control(double power) {
   clawMotor.move(power);
@@ -34,18 +35,22 @@ void checkClaw() {
 
 void clawControl() {
   updatePID();
-  if(!autoClaw) {
+  // std::cout << autoClaw << std::endl;
+  if(autoClaw) {
+    // std::cout << distanceSensor.get() << std::endl;
+    std::cout << clawMotor.get_position() << std::endl;
+    if(distanceSensor.get() < 75) {
+      closeClaw();
+    } else {
+      openClaw();
+    }
+  } else {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1) == 1) {
       openClaw();
     }
     else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1) == 1){
       closeClaw();
     }
-  } else {
-    if(distanceSensor.get() < 100) {
-      closeClaw();
-    } else {
-      openClaw();
-    }
   }
+  checkClaw();
 }

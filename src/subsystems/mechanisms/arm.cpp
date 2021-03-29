@@ -30,16 +30,16 @@ void armControl() {
       setArmDeg(0);
     else
       setArmDeg(armPID->getTarget() - maxArmDegMovement);
-  } else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_B) == 1 && armPID->getTarget() + maxArmDegMovement < 850) {
+  } else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_B) == 1 && armPID->getTarget() + maxArmDegMovement < 200) {
     //Move up (manual)
-    if(armPID->getTarget() + maxArmDegMovement > 850)
-      setArmDeg(850);
+    if(armPID->getTarget() + maxArmDegMovement > 200)
+      setArmDeg(200);
     else
       setArmDeg(armPID->getTarget() + maxArmDegMovement);
   }
    else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_X) == 1) {
     //Move to 90 deg (preset)
-    setArmDeg(850);
+    setArmDeg(200);
   } else if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_Y) == 1) {
     //Move to 0 deg (preset)
     setArmDeg(0);
