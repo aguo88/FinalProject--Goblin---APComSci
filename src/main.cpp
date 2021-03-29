@@ -90,10 +90,10 @@ void opcontrol() {
 		setDrive();
 
     //control arm
-    // armControl();
+    armControl();
 
 		//control claw
-		// clawControl();
+		clawControl();
 
 		// std::cout << "Gyro Value: " << gyro.get_heading() << std::endl;
 

@@ -1,7 +1,7 @@
 #include "main.h"
 
-static bool autoClaw;
-static bool aquiredObject;
+extern bool autoClaw;
+extern bool aquiredObject;
 void openClaw();
 void closeClaw();
 void checkClaw();
