@@ -12,14 +12,15 @@ bool runAutoCommands;
 void searchGameObject() {
   autoClaw = true;
   int objXCord = getXCord();
-  double power = (160 - objXCord)/160.0 * 0.7;
+  double power = (160 - objXCord)/160.0 * 0.5;
   if(objXCord > 155 && objXCord < 165) {
     //drive forward
-    power += 0.4;
+    setDriveMotors(0.4, 0.4);
     std::cout << "found it" <<std::endl;
+  } else {
+      setDriveMotors(-power, power);
   }
-  std::cout << power <<std::endl;
-  setDriveMotors(-power, power);
+  std::cout << objXCord <<std::endl;
 }
 
 void manageAuto() {
@@ -29,8 +30,6 @@ void manageAuto() {
     runAutoCommands = false;
   }
   if(runAutoCommands) {
-    if(!aquiredObject) {
-      searchGameObject();
-    }
+          searchGameObject();
   }
 }

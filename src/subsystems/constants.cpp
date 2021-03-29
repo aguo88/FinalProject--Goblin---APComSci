@@ -19,4 +19,4 @@ int DISTANCE_PORT = 1;
 int MOTOR_SCALE = 127;
 
 //Loop Delay
-double ROBOT_DELAY = 10;//10ms
+double ROBOT_DELAY = 20;//10ms
