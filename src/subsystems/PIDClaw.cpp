@@ -2,7 +2,7 @@
 #include "subsytemHeaders/PIDClaw.hpp"
 #include "subsytemHeaders/constants.hpp"
 
-PIDClaw(double kP, double kI, double kD, double setPoint, double counts, pros::Motor motor)
+PIDClaw(double kP, double kI, double kD, double setPoint, int counts)
 {
     //p, i, d are tuning values
     this->p = p;
@@ -14,10 +14,12 @@ PIDClaw(double kP, double kI, double kD, double setPoint, double counts, pros::M
 }
 
 double PIDClaw::PIDcount() {
-  this->setError(this->target - this->counts);
-  this->sum += this->getError() * ROBOT_DELAY;
-  double derivative = (this->getError() - this->last) / ROBOT_DELAY;
-  double power = this->p * getError() + i*this->sum + d*derivative;
-  this->last = derivative;
-  return power;
+  int objXCord = getXCord();
+  double power = (160 - objXCord)/160.0;
+  if(objXCord > 145 && objXCord < 175) {
+    //drive forward
+    return (power + 0.4);
+  } else {
+    return (power);
+  }
 }
