@@ -7,8 +7,10 @@
 #include "subsytemHeaders/mechanisms/arm.hpp"
 #include "subsytemHeaders/math.hpp"
 #include "subsytemHeaders/constants.hpp"
+#include "subsytemHeaders/PIDClaw.hpp"
 
 bool runAutoCommands;
+PIDClaw* autoPID = new PIDClaw(1, 0, 0, 160, 0);
 
 
 /*
@@ -18,6 +20,7 @@ object is "found" if the objXcord is within the window of 145 and 175 pixel on t
 if object is not found, the motors will be set so that the robot spinds in circles looking for object
 */
 void searchGameObject() {
+<<<<<<< HEAD
   int objXCord = getXCord();
   double power = (160 - objXCord)/160.0;
   if(objXCord > 145 && objXCord < 175) {
@@ -29,6 +32,22 @@ void searchGameObject() {
   }
 
   std::cout << objXCord <<std::endl;
+=======
+  double power = autoPID->PIDcount();
+  setDriveMotors(-power, power);
+  // int objXCord = getXCord();
+  // double power = (160 - objXCord)/160.0;
+  // if(objXCord > 145 && objXCord < 175) {
+  //   //drive forward
+  //   // power += 0.4;
+  //   setDriveMotors(-power + 0.4, power + 0.4);
+  //   std::cout << "found it" <<std::endl;
+  // } else {
+  //   setDriveMotors(-power, power);
+  // }
+  //
+  // std::cout << objXCord <<std::endl;
+>>>>>>> 3bbb3aedf9c6aa94ab3057ddacbe39fb86253bb2
 }
 
 /*
