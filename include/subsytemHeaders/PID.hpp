@@ -3,9 +3,10 @@
 class PID
 {
   private:
-  double p, i, d, error, target, counts;
+
 
   public:
+  double p, i, d, error, target, counts;
   double sum, last;
   pros::Motor motor();
   PID(double kP, double kI, double kD, double setPoint, double counts);
