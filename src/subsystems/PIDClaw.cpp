@@ -2,7 +2,8 @@
 #include "subsytemHeaders/PIDClaw.hpp"
 #include "subsytemHeaders/constants.hpp"
 
-PIDClaw(double kP, double kI, double kD, double setPoint, double counts, pros::Motor motor)
+PIDClaw::PIDClaw(double kP, double kI, double kD, double setPoint, double counts, pros::Motor motor)
+:PID(kP, kI, kD, setPoint, counts);
 {
     //p, i, d are tuning values
     this->p = p;
