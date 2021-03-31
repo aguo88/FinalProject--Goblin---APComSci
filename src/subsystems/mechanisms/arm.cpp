@@ -4,24 +4,28 @@
 
 static int maxArmDegMovement = 1;
 
+//creates object of PID class
 PID* armPID = new PID(10, 0, 0, 0, 0);
 
+//method to control arm power
 void autoControl(double power) {
   armMotor.move(power);
 }
 
+//method to set arm degrees using PID stTarget method
 void setArmDeg(int degrees) {
   armPID->setTarget(degrees);
 }
 
+//updates PID setCounts method
 void updateArmPID() {
   armPID->setCounts(armMotor.get_position());
 }
 
 //Always under PID loop
+//manual arm control using PID
 void armControl() {
   updateArmPID();
-  // pros::lcd::set_text(1, motor_get_position(3));
   std::cout << "Motor Position: " << armMotor.get_position() << std::endl;
   //Manual & Preset Control
   if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_A) == 1 && armPID->getTarget() - 2 > 0) {

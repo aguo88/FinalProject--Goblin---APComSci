@@ -4,5 +4,3 @@ void armControl();
 void autoControl(double power);
 void setArmDeg(int degrees);
 void updateArmPID();
-//std::int32_t pros::Controller::get_digital ( pros::controller_digital_e_t button )
-//std::int32_t pros::Motor::move_velocity ( const std::int32_t velocity )
