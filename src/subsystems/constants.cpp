@@ -9,9 +9,6 @@ int CLAW_PORT = 9;
 //VISION CAMERA
 int CAM_PORT = 10;
 
-//GYRO SENSOR
-int GYRO_PORT = 7;
-
 //Distance Sensor
 int DISTANCE_PORT = 2;
 

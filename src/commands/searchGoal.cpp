@@ -1,7 +1,0 @@
-#include "main.h"
-#include "commandHeaders/searchGoal.hpp"
-#include "subsytemHeaders/globals.hpp"
-#include "subsytemHeaders/constants.hpp"
-#include "subsytemHeaders/mechanisms/drivetrain.hpp"
-#include "subsytemHeaders/sensors/vision.hpp"
-#include "commandHeaders/autoTask.hpp"

@@ -7,8 +7,11 @@ class PID
 
   public:
   double sum, last;
-  pros::Motor motor();
+
+  //constructor:
   PID(double kP, double kI, double kD, double setPoint, double counts);
+
+  //getters and stters for private instance variables:
   double getP();
   void setP(double p);
   double getI();
@@ -21,6 +24,7 @@ class PID
   void setTarget(double target);
   double getCounts();
   void setCounts(double counts);
+
+  //Returns the power to set to the motor(s) after calculations
   double PIDcount();
-  double PIDdegree();
 };
